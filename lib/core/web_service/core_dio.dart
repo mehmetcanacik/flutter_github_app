@@ -1,10 +1,7 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
-import '../base/base_model.dart';
-import '../enums/http_enum.dart';
-import '../extensions/http_extensions.dart';
-import '../model/i_response_model.dart';
-import '../model/response_model.dart';
+import 'export_library.dart';
+part 'response_parser/response_parser.dart';
 
 abstract class ICoreDio {
   Future<IResponseModel<R>> fetchData<R, T extends BaseModel>(
@@ -44,16 +41,5 @@ class CoreDio with DioMixin, ICoreDio {
             errorMessage:
                 ErrorModel(error: "Bir sorun oluştu : ${responseBody.data}"));
     }
-  }
-
-  R _responseParser<R, T extends BaseModel>(
-      {dynamic data, required T parseModel}) {
-    if (data is List) {
-      return data.map((user) => parseModel.fromJson(user)).toList().cast<T>()
-          as R;
-    } else if (data is Map<String, dynamic>) {
-      return parseModel.fromJson(data) as R;
-    }
-    return data as R;
   }
 }
