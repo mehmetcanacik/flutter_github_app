@@ -5,12 +5,12 @@ import 'export_library.dart';
 part 'response_parser/response_parser.dart';
 
 abstract class ICoreDio {
-  Future<IResponseModel<R>> fetchData<R, T extends BaseModel>(
-      {required String path,
-      required T parseModel,
-      data,
-      required HttpTypes type,
-      Options? options});
+  Future<IResponseModel<R>> fetchData<R, T extends BaseModel>({
+    required String path,
+    required T parseModel,
+    data,
+    required HttpTypes type,
+  });
 }
 
 class CoreDio with DioMixin, ICoreDio {
@@ -22,12 +22,12 @@ class CoreDio with DioMixin, ICoreDio {
   }
 
   @override
-  Future<IResponseModel<R>> fetchData<R, T extends BaseModel>(
-      {required String path,
-      required T parseModel,
-      data,
-      required HttpTypes type,
-      Options? options}) async {
+  Future<IResponseModel<R>> fetchData<R, T extends BaseModel>({
+    required String path,
+    required T parseModel,
+    data,
+    required HttpTypes type,
+  }) async {
     final responseBody = await request(
       path,
       data: data,

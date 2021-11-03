@@ -12,7 +12,7 @@ GithubUser _$GithubUserFromJson(Map<String, dynamic> json) {
     requiredKeys: const ['id', 'login'],
   );
   return GithubUser(
-    userId: json['id'] as int,
+    userId: json['id'] as int?,
     loginName: json['login'] as String?,
     avatarUrl: json['avatar_url'] as String?,
     userName: json['name'] as String?,

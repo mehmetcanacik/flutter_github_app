@@ -6,7 +6,7 @@ part 'github_user_model.g.dart';
 @JsonSerializable()
 class GithubUser extends BaseModel<GithubUser> {
   @JsonKey(name: 'id', required: true)
-  final int userId;
+  final int? userId;
   @JsonKey(name: 'login', required: true)
   final String? loginName;
   @JsonKey(name: 'avatar_url')
@@ -19,7 +19,7 @@ class GithubUser extends BaseModel<GithubUser> {
   final int? following;
 
   GithubUser(
-      {required this.userId,
+      {this.userId,
       this.loginName,
       this.avatarUrl,
       this.userName,
