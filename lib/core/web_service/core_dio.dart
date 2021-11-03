@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'export_library.dart';
 part 'response_parser/response_parser.dart';
@@ -13,6 +14,13 @@ abstract class ICoreDio {
 }
 
 class CoreDio with DioMixin, ICoreDio {
+  final BaseOptions baseOptions;
+  CoreDio({required this.baseOptions}) {
+    options = baseOptions;
+    interceptors.add(InterceptorsWrapper());
+    httpClientAdapter = DefaultHttpClientAdapter();
+  }
+
   @override
   Future<IResponseModel<R>> fetchData<R, T extends BaseModel>(
       {required String path,

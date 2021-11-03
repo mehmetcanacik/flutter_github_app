@@ -7,10 +7,7 @@ class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    // final ExamModel viewModel = Provider.of<ExamModel>(context, listen: false);
-
     return ViewModelProvider<HomeViewModel>.withConsumer(
-        onModelReady: (model) => model.setInit(),
         onPageBuilder: (context, viewModel, child) {
           return Scaffold(
             backgroundColor: Theme.of(context).backgroundColor,
@@ -19,9 +16,9 @@ class HomeView extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text(
-                    "${viewModel.getCounter} ",
-                    style: const TextStyle(
+                  const Text(
+                    "Center ",
+                    style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
                         color: Colors.white),
@@ -30,9 +27,7 @@ class HomeView extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 30.0),
                     child: MaterialButton(
                       color: Colors.blue[100],
-                      onPressed: () {
-                        viewModel.incrementCounter();
-                      },
+                      onPressed: () {},
                       shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.vertical(
                               bottom: Radius.circular(10.0)),
