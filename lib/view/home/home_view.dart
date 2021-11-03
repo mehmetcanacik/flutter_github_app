@@ -11,6 +11,7 @@ class HomeView extends StatelessWidget {
         onModelReady: (model) => model.setInit(),
         onPageBuilder: (context, viewModel, child) {
           return Scaffold(
+            backgroundColor: Theme.of(context).backgroundColor,
             body: SizedBox(
               width: double.infinity,
               child: Column(
@@ -19,7 +20,29 @@ class HomeView extends StatelessWidget {
                   Text(
                     "${viewModel.getCounter} ",
                     style: const TextStyle(
-                        fontSize: 20.0, fontWeight: FontWeight.bold),
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                    child: MaterialButton(
+                      color: Colors.blue[100],
+                      onPressed: () {
+                        viewModel.incrementCounter();
+                      },
+                      shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.vertical(
+                              bottom: Radius.circular(10.0)),
+                          side: BorderSide(color: Colors.grey, width: 1.0)),
+                      child: const Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "Click Me!",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),

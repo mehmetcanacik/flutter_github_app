@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class HomeViewModel with ChangeNotifier {
   late int getCounter;
   HomeViewModel() {
-    setInit();
+    getCounter = 0;
+    notifyListeners();
+    // setInit();
   }
   setInit() {
-    getCounter = 0;
+    // getCounter = 0;
   }
 
   incrementCounter() {
