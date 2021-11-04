@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Github Users App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        backgroundColor: Colors.black54,
+        backgroundColor: Colors.blue,
         primarySwatch: Colors.blue,
       ),
       home: const HomeView(),

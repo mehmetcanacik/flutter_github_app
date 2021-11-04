@@ -14,7 +14,7 @@ GithubUser _$GithubUserFromJson(Map<String, dynamic> json) {
   return GithubUser(
     userId: json['id'] as int?,
     loginName: json['login'] as String?,
-    avatarUrl: json['avatar_url'] as String?,
+    avatarUrl: json['avatar_url'] as String? ?? "assets/images/githubUser.png",
     userName: json['name'] as String?,
     email: json['blog'] as String?,
     followers: json['followers'] as int?,

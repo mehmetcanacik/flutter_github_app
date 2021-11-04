@@ -21,7 +21,7 @@ class GithubUser extends BaseModel<GithubUser> {
   GithubUser(
       {this.userId,
       this.loginName,
-      this.avatarUrl,
+      this.avatarUrl = "assets/images/githubUser.png",
       this.userName,
       this.email,
       this.followers,
