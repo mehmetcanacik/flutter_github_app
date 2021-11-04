@@ -1,16 +1,28 @@
-# github_app
+# Flutter Github App
 
-A new Flutter project.
+![Flutter Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Google-flutter-logo.svg/320px-Google-flutter-logo.svg.png)
 
-## Getting Started
+Github kullanıcı hesabı bilgilerini görüntüleyen bir uygulamadır.
 
-This project is a starting point for a Flutter application.
+## Proje nitelikleri şunlardır
 
-A few resources to get you started if this is your first Flutter project:
+- Özelleştirilmiş Web service kullanımı
+- Singleton Pattern Yapısı
+- JsonAnnotation Kullanımı
+- Extension Yazımı
+- ViewModel Kullanımı ile daha güçlü sayfa yönetimi
+- Provider (State Managment) Kullanımı
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Projede kullanılan paketler
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+    dependencies:
+        dio: ^4.0.1
+        json_annotation: ^4.3.0
+        provider: ^6.0.1
+        
+    dev_dependencies:
+        build_runner: ^2.1.4
+        flutter_lints: ^1.0.0
+        json_serializable: ^6.0.1
+```
